@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BandMatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>バンドメンバー募集</h1>
+
+  <!-- 投稿エリア -->
+  <div>
+    <h2>投稿</h2>
+    <input id="band" placeholder="バンド名">
+    <input id="university" placeholder="大学名">
+    <input id="place" placeholder="箱">
+
+    <select id="part">
+      <option value="ボーカル">ボーカル</option>
+      <option value="ギターボーカル">ギターボーカル</option>
+      <option value="バッキングギター">バッキングギター</option>
+      <option value="リードギター">リードギター</option>
+      <option value="ベース">ベース</option>
+      <option value="ドラム">ドラム</option>
+      <option value="キーボード">キーボード</option>
+      <option value="その他">その他</option>
+    </select>
+
+    <input id="date" type="datetime-local">
+
+    <button onclick="addPost()">投稿</button>
+  </div>
+
+  <!-- 検索エリア -->
+  <div>
+    <h2>検索</h2>
+
+    <h3>パートで検索</h3>
+    <select id="searchPart">
+      <option value="">選択してください</option>
+      <option value="ボーカル">ボーカル</option>
+      <option value="ギターボーカル">ギターボーカル</option>
+      <option value="バッキングギター">バッキングギター</option>
+      <option value="リードギター">リードギター</option>
+      <option value="ベース">ベース</option>
+      <option value="ドラム">ドラム</option>
+      <option value="キーボード">キーボード</option>
+      <option value="その他">その他</option>
+    </select>
+    <button onclick="searchByPart()">検索</button>
+
+    <h3>大学名で検索</h3>
+    <input id="searchUniversity" placeholder="大学名を入力">
+    <button onclick="searchByUniversity()">検索</button>
+
+    <br><br>
+    <button onclick="render()">リセット</button>
+  </div>
+
+  <!-- 一覧 -->
+  <h2>募集一覧</h2>
+  <ul id="list"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
